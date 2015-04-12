@@ -161,7 +161,23 @@ foreach($change_json as $key=>$value) {
 
 $chang_content = json_encode($change_json);
 
-//
+// base64
+$url="http://www.baidu.com";
+echo "url=$url\n";
+
+$e64 = base64_encode($url);
+echo "e64={$e64}\n";
+
+$d64 = base64_decode($e64);
+echo "d64=${d64}\n";
+
+// url
+$eurl = urlencode("http://www.so.com");
+echo "eurl = $eurl\n";
+
+$durl = urldecode($eurl);
+echo "durl = $durl\n";
+
 
 ?>
 
