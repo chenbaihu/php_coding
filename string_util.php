@@ -8,6 +8,8 @@
 //                                             string rtrim(string $str[, string $chirlist]);
 //
 //    trim                                     从字符串开始和结束的位置删除空格或者其他字符
+//    
+//    str_replace                              使用一个字符串( 数组)替换字符串中的另一些子串。
 //
 //    split                                    通过正则表达式切分字符串；
 //
@@ -28,6 +30,36 @@
 //    gzencode        和  gzdecode             GZIP格式压缩和解压缩
 //    gzdeflate       和  gzinflate            DEFLATE格式压缩和解压缩
 
+// 大小写转换：
+// strtolower                        字符串转换为小写 string strtolower(string $str);
+// strtoupper                        字符串转换为大写  string strtoupper(string $str); 
+// ucfirst                           首字母大写 string ucfirst(string $str);
+// ucwords                           将每个单词的首字母转换为大写字母 string ucwords(string $str);
+
+//字符串大小写不敏感比较：
+int strcasecmp ( string $str1 , string $str2 )             二进制安全比较字符串（不区分大小写）。
+int strcmp ( string $str1 , string $str2 )                   二进制安全字符串比较（区分大小写）。
+
+找子串：
+strpos     stripos      strrpos       strripos
+string strstr ( string haystack, string needle)
+
+// replace 
+//语法
+//str_replace(find, replace, string, count)参数 描述
+//find      必需。规定要查找的值。
+//replace   必需。规定替换 find 中的值的值。
+//string    必需。规定被搜索的字符串。
+//count     可选。一个变量，对替换数进行计数。
+
+// 一对一替换：
+str_replace('<br>', '<p>', $Content);
+
+// 多对一替换：
+str_replace(array('<p>','</p>'), '', $Content);
+
+// 多对多替换：
+str_replace(array('<br>', '<p>','</p>'), array('<br />','<hr>',''), $Content); 
 
 // ini
 /*
@@ -47,9 +79,10 @@ dest_file=/home/s/data/server1/data2.txt
 exec_command="yyyyyy"
 fail_break=false
 md5_check=true
-
-// $ini_file_map = parse_ini_file("./config.ini", true);
 */
+
+$ini_file_map = parse_ini_file("./config.ini", true);
+
 function string_to_ini($ini_str_cont, $linesep = "\n", $kvsep = "=",  $process_sections = false) 
 {
     $parsed_ini = array();
