@@ -45,7 +45,6 @@ string fread($handle);                             二进制安全的读
 
 bool   unlink($filename);                         删除
 
-
 使用举例：
 压缩文件和非压缩文件同时存在的读取方法：
 $logfile_list = glob($logfile_pattern);
@@ -83,7 +82,5 @@ foreach ( $logfile_list as $file )
     }
     $close($fp);
 }
-
-
 
 ?>
