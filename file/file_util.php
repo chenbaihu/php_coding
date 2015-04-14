@@ -43,9 +43,19 @@ string fgets($handle);                             一行为单位从件读取内容；feof(
 
 string fread($handle);                             二进制安全的读
 
-bool   unlink($filename);                         删除
+bool   unlink($filename);                          删除
 
-使用举例：
+使用举例1:
+$fp = fopen("/home/s/data/data.xml", "r");
+
+while (!feof($fp)) {
+	$line = fgets($fp);
+	echo $line."\n";
+}
+
+fclose($fp);
+
+使用举例2：
 压缩文件和非压缩文件同时存在的读取方法：
 $logfile_list = glob($logfile_pattern);
 $line_count = 0;
