@@ -40,8 +40,8 @@
 int strcasecmp ( string $str1 , string $str2 )             二进制安全比较字符串（不区分大小写）。
 int strcmp ( string $str1 , string $str2 )                   二进制安全字符串比较（区分大小写）。
 
-找子串：
-strpos     stripos      strrpos       strripos
+//找子串：
+//strpos     stripos      strrpos       strripos
 string strstr ( string haystack, string needle)
 
 // replace 
